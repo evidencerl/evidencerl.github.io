@@ -9,16 +9,6 @@ This repository contains the source code for the project page of the paper **Evi
 
 Vision-Language Models often produce correct-looking answers by relying on language priors and dataset shortcuts rather than the visual evidence in the image. We propose **Counterfactual Evidence Disentanglement (CED)**, a training-time evidence audit that tests whether a sampled answer causally depends on the local evidence that supports it. This project page serves as a visual showcase of the paper's motivation, method, and key results.
 
-## Local Preview
-
-To preview the webpage locally, you can use Python's built-in HTTP server:
-
-```bash
-python3 -m http.server 8000
-```
-
-Then open `http://localhost:8000` in your web browser.
-
 ## Citation
 
 If you find this work helpful, please consider citing our paper:

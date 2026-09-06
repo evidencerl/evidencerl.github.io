@@ -5,6 +5,8 @@ This repository contains the source code for the project page of the paper **Evi
 🌐 **Project Page:** [https://evidencerl.github.io/](https://evidencerl.github.io/)  
 📄 **Paper:** [arXiv:2608.08021](https://arxiv.org/pdf/2608.08021v1)
 
+Evidence-RL is a reinforcement learning post-training method for Vision-Language Models (VLMs/MLLMs) that improves visual grounding through counterfactual evidence interventions inside GRPO.
+
 ## Overview
 
 Vision-Language Models often produce correct-looking answers by relying on language priors and dataset shortcuts rather than the visual evidence in the image. We propose **Counterfactual Evidence Disentanglement (CED)**, a training-time evidence audit that tests whether a sampled answer causally depends on the local evidence that supports it. This project page serves as a visual showcase of the paper's motivation, method, and key results.

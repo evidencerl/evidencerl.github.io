@@ -3,159 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Evidence-RL: Towards Evidence-intensive Visual Reasoning" />
-    <meta property="og:description" content="Counterfactual Evidence Disentanglement for grounded VLM post-training. Rewards correct answers that causally depend on visual evidence." />
-    <meta property="og:image" content="https://evidencerl.github.io/assets/figures/method.png" />
     <meta name="description" content="Evidence-RL proposes Counterfactual Evidence Disentanglement (CED), a training-time evidence audit for VLM grounding that rewards correct answers causally depending on visual evidence.">
     <meta name="keywords"
       content="Evidence-RL, Counterfactual Evidence Disentanglement, CED, Vision-Language Models, VLM, Multimodal Large Language Models, MLLM, VLM Reinforcement Learning, Multimodal Reinforcement Learning, Reinforcement Learning for Vision-Language Models, GRPO, Visual Grounding, Visual Reasoning, Evidence-aware Reinforcement Learning, Counterfactual Intervention, VLM Post-training, Perception-aware Reinforcement Learning, Multimodal Reasoning, VLM Hallucination">
+    <meta name="theme-color" content="#2E7D6F">
+    <link rel="canonical" href="https://evidencerl.github.io/">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232E7D6F'/%3E%3Ccircle cx='28' cy='28' r='13' fill='none' stroke='%23fff' stroke-width='5'/%3E%3Cpath d='M38 38l12 12' stroke='%23C88A3E' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E">
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://evidencerl.github.io/">
+    <meta property="og:title" content="Evidence-RL: Towards Evidence-intensive Visual Reasoning">
+    <meta property="og:description" content="Counterfactual Evidence Disentanglement for grounded VLM post-training. Rewards correct answers that causally depend on visual evidence.">
+    <meta property="og:image" content="https://evidencerl.github.io/assets/figures/method.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Evidence-RL: Towards Evidence-intensive Visual Reasoning">
+    <meta name="twitter:description" content="Counterfactual Evidence Disentanglement for grounded VLM post-training. Rewards correct answers that causally depend on visual evidence.">
+    <meta name="twitter:image" content="https://evidencerl.github.io/assets/figures/method.png">
+
     <title>Evidence-RL: Towards Evidence-intensive Visual Reasoning</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
     <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- KaTeX for math -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"
         onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
-    <!-- Consolidated CSS -->
     <link href="styles.css" rel="stylesheet">
-    <meta name="citation_title"
-      content="Evidence-RL: Towards Evidence-intensive Visual Reasoning">
 
-<meta name="citation_author" content="Haojie Huang">
-<meta name="citation_author" content="Xinlei Yu">
-<meta name="citation_author" content="Chengming Xu">
-
-<meta name="citation_publication_date" content="2026/08/08">
-
-<meta name="citation_pdf_url"
-      content="https://arxiv.org/pdf/2608.08021">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ScholarlyArticle",
-  "name": "Evidence-RL: Towards Evidence-intensive Visual Reasoning",
-  "description":
-    "A reinforcement-learning post-training method for vision-language models using counterfactual visual evidence rewards.",
-  "datePublished": "2026-08-08",
-  "url": "https://evidencerl.github.io/",
-  "sameAs": [
-    "https://arxiv.org/abs/2608.08021",
-    "https://huggingface.co/papers/2608.08021"
-  ]
-}
-</script>
-    
+    <!-- Google Scholar -->
+    <meta name="citation_title" content="Evidence-RL: Towards Evidence-intensive Visual Reasoning">
+    <meta name="citation_author" content="Haojie Huang">
+    <meta name="citation_author" content="Xinlei Yu">
+    <meta name="citation_author" content="Chengming Xu">
+    <meta name="citation_author" content="Zhangquan Chen">
+    <meta name="citation_author" content="Cheng Yang">
+    <meta name="citation_author" content="Qingdong He">
+    <meta name="citation_author" content="Yu Yang">
+    <meta name="citation_author" content="Jiangning Zhang">
+    <meta name="citation_author" content="Xiaobin Hu">
+    <meta name="citation_publication_date" content="2026/08/08">
+    <meta name="citation_arxiv_id" content="2608.08021">
+    <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2608.08021">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "name": "Evidence-RL: Towards Evidence-intensive Visual Reasoning",
+      "description": "A reinforcement-learning post-training method for vision-language models using counterfactual visual evidence rewards.",
+      "author": [
+        {"@type": "Person", "name": "Haojie Huang"},
+        {"@type": "Person", "name": "Xinlei Yu"},
+        {"@type": "Person", "name": "Chengming Xu"},
+        {"@type": "Person", "name": "Zhangquan Chen"},
+        {"@type": "Person", "name": "Cheng Yang"},
+        {"@type": "Person", "name": "Qingdong He"},
+        {"@type": "Person", "name": "Yu Yang"},
+        {"@type": "Person", "name": "Jiangning Zhang"},
+        {"@type": "Person", "name": "Xiaobin Hu"}
+      ],
+      "datePublished": "2026-08-08",
+      "url": "https://evidencerl.github.io/",
+      "image": "https://evidencerl.github.io/assets/figures/method.png",
+      "sameAs": [
+        "https://arxiv.org/abs/2608.08021",
+        "https://huggingface.co/papers/2608.08021"
+      ]
+    }
+    </script>
 </head>
 <body>
-    
+    <a class="skip-link" href="#main">Skip to content</a>
 
     <!-- Header Section -->
     <header class="header-section" id="overview">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-11 mx-auto text-center">
-                    <h1 class="paper-title">Evidence-RL</h1>
-                    <p class="paper-subtitle">Towards Evidence-intensive Visual Reasoning</p>
-                    <div class="author-line">
-                        <span><a href="#" class="author-link">Haojie Huang<sup>1,2,<span class="author-mark">*</span></sup></a></span>
-                        <span><a href="#" class="author-link">Xinlei Yu<sup>1,<span class="author-mark">*</span></sup></a></span>
-                        <span><a href="#" class="author-link">Chengming Xu<sup>3,<span class="author-mark">*</span></sup></a></span>
-                        <span><a href="#" class="author-link">Zhangquan Chen<sup>4</sup></a></span>
-                        <span><a href="#" class="author-link">Cheng Yang<sup>5</sup></a></span>
-                    </div>
-                    <div class="author-line author-line--middle">
-                        <span><a href="#" class="author-link">Qingdong He<sup>5</sup></a></span>
-                        <span><a href="#" class="author-link">Yu Yang<sup>2</sup></a></span>
-                        <span><a href="#" class="author-link">Jiangning Zhang<sup>2</sup></a></span>
-                        <span><a href="#" class="author-link">Xiaobin Hu<sup>1,<span class="author-mark">&dagger;</span></sup></a></span>
-                    </div>
+            <div class="hero-inner">
+                <p class="hero-eyebrow">arXiv 2608.08021 &middot; 2026</p>
+                <h1 class="paper-title">Evidence-RL</h1>
+                <p class="paper-subtitle">Towards Evidence-intensive Visual Reasoning</p>
+                <div class="author-line">
+                    <span class="author-name">Haojie Huang<sup>1,2,<span class="author-mark">*</span></sup></span>
+                    <span class="author-name">Xinlei Yu<sup>1,<span class="author-mark">*</span></sup></span>
+                    <span class="author-name">Chengming Xu<sup>3,<span class="author-mark">*</span></sup></span>
+                    <span class="author-name">Zhangquan Chen<sup>4</sup></span>
+                    <span class="author-name">Cheng Yang<sup>5</sup></span>
+                </div>
+                <div class="author-line author-line--middle">
+                    <span class="author-name">Qingdong He<sup>5</sup></span>
+                    <span class="author-name">Yu Yang<sup>2</sup></span>
+                    <span class="author-name">Jiangning Zhang<sup>2</sup></span>
+                    <span class="author-name">Xiaobin Hu<sup>1,<span class="author-mark">&dagger;</span></sup></span>
+                </div>
 
-                    <div class="equal-contribution">
-                        <span><sup><span class="author-mark">*</span></sup> Equal contribution</span>
-                        <span class="mx-2 eq-separator">|</span>
-                        <span><sup><span class="author-mark">&dagger;</span></sup> Corresponding author</span>
-                    </div>
+                <div class="institution-line">
+                    <span><sup>1</sup>National University of Singapore</span>
+                    <span><sup>2</sup>Zhejiang University</span>
+                    <span><sup>3</sup>Fudan University</span>
+                    <span><sup>4</sup>Tsinghua University</span>
+                    <span><sup>5</sup>Tencent</span>
+                </div>
 
-                    <div class="institution-line">
-                        <sup>1</sup>National University of Singapore &nbsp;
-                        <sup>2</sup>Zhejiang University &nbsp;
-                        <sup>3</sup>Fudan University &nbsp;
-                        <sup>4</sup>Tsinghua University &nbsp;
-                        <sup>5</sup>Tencent
-                    </div>
+                <div class="equal-contribution">
+                    <span><sup><span class="author-mark">*</span></sup> Equal contribution</span>
+                    <span class="eq-separator">|</span>
+                    <span><sup><span class="author-mark">&dagger;</span></sup> Corresponding author</span>
+                </div>
 
-                    <div class="paper-btn-wrapper">
-                        <a href="https://arxiv.org/pdf/2608.08021v1" class="btn paper-btn"><i class="fas fa-file-alt me-2"></i>Paper<i class="fas fa-arrow-right ms-2"></i></a>
-                    </div>
+                <div class="paper-btn-wrapper">
+                    <a href="https://arxiv.org/pdf/2608.08021v1" class="paper-btn"><i class="fas fa-file-pdf"></i>Paper</a>
+                    <a href="https://arxiv.org/abs/2608.08021" class="paper-btn paper-btn--outline"><i class="fas fa-scroll"></i>arXiv</a>
+                    <a href="https://huggingface.co/papers/2608.08021" class="paper-btn paper-btn--outline"><span class="btn-emoji" aria-hidden="true">&#129303;</span>HF Papers</a>
+                    <span class="paper-btn paper-btn--disabled" aria-disabled="true" title="Code will be released soon"><i class="fab fa-github"></i>Code<span class="soon-badge">Coming soon</span></span>
+                    <span class="paper-btn paper-btn--disabled" aria-disabled="true" title="Checkpoints will be released soon"><i class="fas fa-cube"></i>Checkpoint<span class="soon-badge">Coming soon</span></span>
+                    <a href="#citation" class="paper-btn paper-btn--outline"><i class="fas fa-quote-right"></i>BibTeX</a>
                 </div>
             </div>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main class="container">
+    <main class="container" id="main">
         <!-- TL;DR Section -->
-        <section class="row sec-teal" id="tldr">
-            <div class="col-lg-11 mx-auto">
-                <h2 class="section-title" style="margin-top: 12px;">TL;DR</h2>
-                <div class="tldr-box rounded mb-3" style="padding: 22px 36px 24px 36px;">
-                    <div class="row mb-3">
-                        <div class="col-lg-12">
-                            <p class="tldr-headline mb-0">
-                                VLMs should answer from
-                                <span class="tldr-keyword" data-color="primary">visual evidence<span class="keyword-tooltip">The specific image region that causally supports the answer, not the entire image or irrelevant context.</span></span>,
-                                not
-                                <span class="tldr-keyword" data-color="secondary">language priors<span class="keyword-tooltip">Dataset regularities, common sense, and world knowledge that allow correct-looking answers without actually inspecting the relevant image content.</span></span>.
-                                We use
-                                <span class="tldr-keyword" data-color="accent">CED<span class="keyword-tooltip">Counterfactual Evidence Disentanglement: a training-time probe that neutralizes an Evidence Region and compares the support drop against matched non-evidence Regions, measuring whether the answer causally depends on the right visual content.</span></span>
-                                to train grounded reasoning.
-                            </p>
+        <section class="sec-teal" id="tldr">
+            <div class="content-col">
+                <h2 class="section-title section-title--tldr">TL;DR</h2>
+                <div class="tldr-box">
+                    <p class="tldr-headline">
+                        VLMs should answer from
+                        <span class="tldr-keyword" data-color="primary" tabindex="0">visual evidence<span class="keyword-tooltip">The specific image region that causally supports the answer, not the entire image or irrelevant context.</span></span>,
+                        not
+                        <span class="tldr-keyword" data-color="secondary" tabindex="0">language priors<span class="keyword-tooltip">Dataset regularities, common sense, and world knowledge that allow correct-looking answers without actually inspecting the relevant image content.</span></span>.
+                        We use
+                        <span class="tldr-keyword" data-color="accent" tabindex="0">CED<span class="keyword-tooltip">Counterfactual Evidence Disentanglement: a training-time probe that neutralizes an Evidence Region and compares the support drop against matched non-evidence Regions, measuring whether the answer causally depends on the right visual content.</span></span>
+                        to train grounded reasoning.
+                    </p>
+
+                    <div class="stat-strip">
+                        <div class="stat">
+                            <div class="stat__value">+5.94</div>
+                            <div class="stat__label">avg. gain over 9 benchmarks<br><span>Qwen2.5-VL-7B</span></div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat__value">+11.34</div>
+                            <div class="stat__label">avg. gain over 9 benchmarks<br><span>Qwen3.5-9B</span></div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat__value">36<small>/36</small></div>
+                            <div class="stat__label">benchmark&ndash;backbone cells<br><span>with non-negative gain</span></div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat__value">0</div>
+                            <div class="stat__label">extra inference cost<br><span>CED is training-time only</span></div>
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <p class="tldr-abstract mb-0">Vision-Language Models often produce correct-looking answers by relying on language priors and dataset shortcuts rather than the visual evidence in the image. We propose <strong>Counterfactual Evidence Disentanglement (CED)</strong>, a training-time evidence audit that tests whether a sampled answer causally depends on the local evidence that supports it. CED neutralizes an object-centric Evidence Region and compares the resulting support drop against matched non-evidence Regions, then combines this signal with answer correctness inside GRPO. Across nine benchmarks and four backbones, Evidence-RL outperforms prior RL-based post-training methods with no inference-time overhead.</p>
-                        </div>
-                    </div>
+                    <p class="tldr-abstract">Vision-Language Models often produce correct-looking answers by relying on language priors and dataset shortcuts rather than the visual evidence in the image. We propose <strong>Counterfactual Evidence Disentanglement (CED)</strong>, a training-time evidence audit that tests whether a sampled answer causally depends on the local evidence that supports it. CED neutralizes an object-centric Evidence Region and compares the resulting support drop against matched non-evidence Regions, then combines this signal with answer correctness inside GRPO. Across nine benchmarks and four backbones, Evidence-RL outperforms prior RL-based post-training methods with no inference-time overhead.</p>
                 </div>
             </div>
         </section>
 
         <!-- Sticky Section Navigation -->
-        <nav id="section-nav" class="section-nav">
+        <nav id="section-nav" class="section-nav" aria-label="Sections">
             <div class="nav-mobile-header">
-                <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle navigation">
+                <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="section-nav-inner">
                     <span></span><span></span><span></span>
                 </button>
                 <span class="nav-mobile-title">Evidence-RL</span>
+                <span class="nav-mobile-current" id="nav-mobile-current"></span>
             </div>
-            <div class="section-nav-inner">
-                <a class="section-nav-link nav-top-link" data-section="overview"><i class="fas fa-arrow-up" style="font-size: 0.7em;"></i> Top</a>
-                <span class="section-nav-sep">&middot;</span>
-                <a class="section-nav-link nav-color-gold" data-section="sec-motivation">Motivation</a>
-                <span class="section-nav-sep">&middot;</span>
-                <a class="section-nav-link nav-color-teal" data-section="sec-method">Method</a>
-                <span class="section-nav-sep">&middot;</span>
-                <a class="section-nav-link nav-color-blue" data-section="sec-results">Results</a>
-                <span class="section-nav-sep">&middot;</span>
-                <a class="section-nav-link nav-color-blue" data-section="sec-analysis">Analysis</a>
-                <span class="section-nav-sep">&middot;</span>
-                <a class="section-nav-link nav-color-gold" data-section="sec-discussion">Discussion</a>
+            <div class="section-nav-inner" id="section-nav-inner">
+                <a class="section-nav-link nav-top-link" href="#overview" data-section="overview"><i class="fas fa-arrow-up"></i> Top</a>
+                <a class="section-nav-link nav-color-gold" href="#sec-motivation" data-section="sec-motivation">Motivation</a>
+                <a class="section-nav-link nav-color-teal" href="#sec-method" data-section="sec-method">Method</a>
+                <a class="section-nav-link nav-color-blue" href="#sec-results" data-section="sec-results">Results</a>
+                <a class="section-nav-link nav-color-violet" href="#sec-analysis" data-section="sec-analysis">Analysis</a>
+                <a class="section-nav-link nav-color-rose" href="#sec-discussion" data-section="sec-discussion">Discussion</a>
+                <a class="section-nav-link nav-color-gray" href="#citation" data-section="citation">Citation</a>
             </div>
+            <div class="nav-progress" id="nav-progress"></div>
         </nav>
 
-        <div class="sidebar-content-area">
+        <div class="content-area">
 
             <!-- Section 1: Motivation (gold) -->
             <section id="sec-motivation" class="sec-gold">
-                <div class="row">
-                    <div class="col-lg-11 mx-auto">
+                <div class="content-col">
                         <h2 class="section-title">Why Visual Evidence Matters</h2>
 
                         <p class="body-text">
@@ -167,7 +205,7 @@
                         </p>
 
                         <div class="section-figure section-figure--wide section-figure--framed">
-                            <img src="assets/figures/figure1.png" alt="Causal path decomposition: evidence path vs. shortcut path vs. nuisance path" loading="lazy">
+                            <img src="assets/figures/web/figure1.webp" width="2000" height="1125" decoding="async" alt="Causal path decomposition: evidence path vs. shortcut path vs. nuisance path" loading="lazy">
                         </div>
                         <p class="section-caption">
                             <strong>Left:</strong> Task setup with a counting query over two views of the same scene. <strong>Upper right:</strong> A pretrained VLM gives the same prior-based answer for both views; Evidence-RL inspects the visual evidence and adjusts its answer when the scene changes. <strong>Lower right:</strong> Causal path decomposition &mdash; a candidate answer can be supported by the target visual evidence, by irrelevant context, or by language priors, which motivates CED to test whether the response depends specifically on the evidence path.
@@ -179,15 +217,11 @@
                             </p>
                         </div>
                     </div>
-                </div>
             </section>
-
-            <hr class="section-divider">
 
             <!-- Section 2: Method (teal) -->
             <section id="sec-method" class="sec-teal">
-                <div class="row">
-                    <div class="col-lg-11 mx-auto">
+                <div class="content-col">
                         <h2 class="section-title">Counterfactual Evidence Disentanglement</h2>
 
                         <p class="body-text">
@@ -195,7 +229,7 @@
                         </p>
 
                         <div class="section-figure section-figure--wide section-figure--framed">
-                            <img src="assets/figures/method.png" alt="Overview of Evidence-RL during post-training" loading="lazy">
+                            <img src="assets/figures/web/method.webp" width="2000" height="1313" decoding="async" alt="Overview of Evidence-RL during post-training" loading="lazy">
                         </div>
                         <p class="section-caption">
                             <strong>Overview of Evidence-RL during post-training.</strong> A policy samples candidate answers, and CED scores each answer by applying the same feature-space intervention to the proposed Evidence Region and to matched non-evidence Regions. The contrastive support drop yields an evidence margin, which is combined with correctness to form the GRPO reward. The counterfactual audit is used only during training; inference uses the trained VLM normally.
@@ -241,25 +275,61 @@
                             </p>
                         </div>
                     </div>
-                </div>
             </section>
-
-            <hr class="section-divider">
 
             <!-- Section 3: Results (blue) -->
             <section id="sec-results" class="sec-blue">
-                <div class="row">
-                    <div class="col-lg-11 mx-auto">
+                <div class="content-col">
                         <h2 class="section-title">Nine-Benchmark Results</h2>
 
                         <p class="body-text">
                             Evidence-RL obtains the highest average score and the largest mean improvement (+5.94) in the matched-backbone comparison on Qwen2.5-VL-7B. It is <strong>the only RL method with non-negative gains on all nine benchmarks</strong>. The largest gains appear on perception-heavy benchmarks (VLMsAreBlind +7.58, FREAK +14.22, MMMU +6.84), while general reasoning benchmarks remain positive. This pattern supports the intended role of the reward: increasing reliance on visual evidence without sacrificing general transfer.
                         </p>
 
-                        <!-- Table 2: Nine-benchmark main results -->
+                        <!-- Avg. gain chart (data from Table 1, Avg column of the Δ rows) -->
+                        <figure class="gain-chart" aria-labelledby="gain-chart-title">
+                            <figcaption id="gain-chart-title" class="gain-chart__title">Average gain over the base model across nine benchmarks</figcaption>
+                            <div class="gain-chart__rows">
+                                <div class="gain-row gain-row--ours" style="--v:5.94" title="Ours: +5.94 avg. over base">
+                                    <span class="gain-row__name">Ours</span>
+                                    <span class="gain-row__track"><span class="gain-row__bar"></span><span class="gain-row__value">+5.94</span></span>
+                                </div>
+                                <div class="gain-row" style="--v:2.8" title="SophiaVL-R1: +2.80 avg. over base">
+                                    <span class="gain-row__name">SophiaVL-R1</span>
+                                    <span class="gain-row__track"><span class="gain-row__bar"></span><span class="gain-row__value">+2.80</span></span>
+                                </div>
+                                <div class="gain-row" style="--v:2.61" title="PAPO-G-H: +2.61 avg. over base">
+                                    <span class="gain-row__name">PAPO-G-H</span>
+                                    <span class="gain-row__track"><span class="gain-row__bar"></span><span class="gain-row__value">+2.61</span></span>
+                                </div>
+                                <div class="gain-row" style="--v:2.28" title="VPPO-7B: +2.28 avg. over base">
+                                    <span class="gain-row__name">VPPO-7B</span>
+                                    <span class="gain-row__track"><span class="gain-row__bar"></span><span class="gain-row__value">+2.28</span></span>
+                                </div>
+                                <div class="gain-row" style="--v:1.56" title="VLM-R1: +1.56 avg. over base">
+                                    <span class="gain-row__name">VLM-R1 <em>(vs. 3B)</em></span>
+                                    <span class="gain-row__track"><span class="gain-row__bar"></span><span class="gain-row__value">+1.56</span></span>
+                                </div>
+                                <div class="gain-row gain-row--neg" style="--v:0.31" title="Perception-R1-7B: -0.31 avg. over base">
+                                    <span class="gain-row__name">Perception-R1-7B</span>
+                                    <span class="gain-row__track"><span class="gain-row__bar"></span><span class="gain-row__value">-0.31</span></span>
+                                </div>
+                                <div class="gain-row gain-row--neg" style="--v:1.14" title="VAPO-Thinker-7B: -1.14 avg. over base">
+                                    <span class="gain-row__name">VAPO-Thinker-7B</span>
+                                    <span class="gain-row__track"><span class="gain-row__bar"></span><span class="gain-row__value">-1.14</span></span>
+                                </div>
+                            </div>
+                        </figure>
+
+                        <div class="table-toolbar">
+                            <button type="button" class="table-toggle" id="delta-toggle" aria-pressed="false" aria-controls="table-main">
+                                <i class="fas fa-eye"></i><span>Show &Delta; rows for all methods</span>
+                            </button>
+                        </div>
+                        <!-- Table 1: Nine-benchmark main results -->
+                        <p class="table-caption" id="table-cap-1">Table 1. Nine-benchmark evaluation using Qwen2.5-VL-7B as the base model for Ours. Best <strong>bold</strong>; second-best <u>underlined</u>.</p>
                         <div class="result-table-wrapper">
-                            <table class="result-table">
-                                <caption>Table 2. Nine-benchmark evaluation using Qwen2.5-VL-7B as the base model for Ours. Best <strong>bold</strong>; second-best <u>underlined</u>.</caption>
+                            <table class="result-table hide-deltas" id="table-main" aria-labelledby="table-cap-1">
                                 <thead>
                                     <tr>
                                         <th></th>
@@ -268,7 +338,7 @@
                                         <th class="col-sep-left">Avg</th>
                                     </tr>
                                     <tr>
-                                        <th style="text-align:left">Model</th>
+                                        <th class="th-model">Model</th>
                                         <th>Count<br>Bench</th>
                                         <th>Spatial<br>Eval</th>
                                         <th>Hallu<br>sion</th>
@@ -315,7 +385,7 @@
                                         <td class="col-sep-left col-avg">60.05</td>
                                     </tr>
                                     <tr class="row-delta">
-                                        <td class="row-model" style="padding-left:16px">$\Delta$</td>
+                                        <td class="row-model">$\Delta$</td>
                                         <td class="delta-pos">+5.10</td><td class="delta-pos">+1.59</td><td class="delta-pos">+2.60</td><td class="delta-pos">+2.18</td><td class="delta-pos">+0.92</td>
                                         <td class="col-sep-left delta-neg">-12.00</td><td class="delta-neg">-2.90</td><td class="delta-neg">-6.00</td><td class="delta-neg">-1.70</td>
                                         <td class="col-sep-left col-avg delta-neg">-1.14</td>
@@ -327,7 +397,7 @@
                                         <td class="col-sep-left col-avg">63.47</td>
                                     </tr>
                                     <tr class="row-delta">
-                                        <td class="row-model" style="padding-left:16px">$\Delta$</td>
+                                        <td class="row-model">$\Delta$</td>
                                         <td class="delta-pos">+4.10</td><td class="delta-pos">+2.59</td><td class="delta-neg">-0.40</td><td class="delta-pos">+2.91</td><td class="delta-pos">+0.52</td>
                                         <td class="col-sep-left delta-pos">+4.80</td><td class="delta-pos">+0.20</td><td class="delta-pos">+1.50</td><td class="delta-pos">+4.40</td>
                                         <td class="col-sep-left col-avg delta-pos">+2.28</td>
@@ -339,7 +409,7 @@
                                         <td class="col-sep-left col-avg">60.88</td>
                                     </tr>
                                     <tr class="row-delta">
-                                        <td class="row-model" style="padding-left:16px">$\Delta$</td>
+                                        <td class="row-model">$\Delta$</td>
                                         <td class="delta-pos">+3.10</td><td class="delta-pos">+0.49</td><td class="delta-neg">-1.90</td><td class="delta-neg">-1.22</td><td class="delta-pos">+0.02</td>
                                         <td class="col-sep-left delta-pos">+4.00</td><td class="delta-neg">-3.00</td><td class="delta-neg">-2.50</td><td class="delta-neg">-1.70</td>
                                         <td class="col-sep-left col-avg delta-neg">-0.31</td>
@@ -351,7 +421,7 @@
                                         <td class="col-sep-left col-avg">63.80</td>
                                     </tr>
                                     <tr class="row-delta">
-                                        <td class="row-model" style="padding-left:16px">$\Delta$</td>
+                                        <td class="row-model">$\Delta$</td>
                                         <td class="delta-pos">+9.10</td><td class="delta-pos">+5.59</td><td class="delta-pos">+0.90</td><td class="delta-pos">+1.48</td><td class="delta-pos">+0.62</td>
                                         <td class="col-sep-left delta-pos">+6.30</td><td class="delta-neg">-1.90</td><td class="delta-neg">-0.10</td><td class="delta-pos">+1.60</td>
                                         <td class="col-sep-left col-avg delta-pos">+2.61</td>
@@ -363,7 +433,7 @@
                                         <td class="col-sep-left col-avg">57.26</td>
                                     </tr>
                                     <tr class="row-delta">
-                                        <td class="row-model" style="padding-left:16px">$\Delta$ vs. 3B</td>
+                                        <td class="row-model">$\Delta$ vs. 3B</td>
                                         <td class="delta-pos">+4.10</td><td class="delta-pos">+2.50</td><td class="delta-pos">+1.20</td><td class="delta-pos">+1.69</td><td class="delta-neg">-0.14</td>
                                         <td class="col-sep-left delta-pos">+8.20</td><td class="delta-neg">-0.50</td><td class="delta-neg">-1.70</td><td class="delta-neg">-1.30</td>
                                         <td class="col-sep-left col-avg delta-pos">+1.56</td>
@@ -375,22 +445,22 @@
                                         <td class="col-sep-left col-avg val-second">63.99</td>
                                     </tr>
                                     <tr class="row-delta midrule">
-                                        <td class="row-model" style="padding-left:16px">$\Delta$</td>
+                                        <td class="row-model">$\Delta$</td>
                                         <td class="delta-pos">+1.01</td><td class="delta-pos">+2.17</td><td class="delta-neg">-1.77</td><td class="delta-pos">+0.65</td><td class="delta-pos">+12.00</td>
                                         <td class="col-sep-left delta-pos">+3.20</td><td class="delta-pos">+2.68</td><td class="delta-pos">+1.55</td><td class="delta-pos">+3.66</td>
                                         <td class="col-sep-left col-avg delta-pos">+2.80</td>
                                     </tr>
-                                    <tr class="row-ours">
+                                    <tr class="row-ours row-ours-first">
                                         <td class="row-model">Ours</td>
                                         <td class="val-second">88.89</td><td class="val-second">63.34</td><td class="val-second">70.08</td><td class="val-second">54.02</td><td class="val-best">26.40</td>
                                         <td class="col-sep-left val-best">69.40</td><td class="val-best">87.53</td><td class="val-best">57.47</td><td>87.08</td>
                                         <td class="col-sep-left col-avg val-best">67.13</td>
                                     </tr>
                                     <tr class="row-delta row-ours">
-                                        <td class="row-model" style="padding-left:16px">$\Delta$</td>
+                                        <td class="row-model">$\Delta$</td>
                                         <td class="delta-pos">+7.07</td><td class="delta-pos">+4.13</td><td class="delta-pos">+1.44</td><td class="delta-pos">+7.58</td><td class="delta-pos">+14.22</td>
                                         <td class="col-sep-left delta-pos">+6.30</td><td class="delta-pos">+2.80</td><td class="delta-pos">+6.84</td><td class="delta-pos">+3.10</td>
-                                        <td class="col-sep-left col-avg delta-pos" style="font-weight:700">+5.94</td>
+                                        <td class="col-sep-left col-avg delta-pos cell-strong">+5.94</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -403,10 +473,10 @@
                             The same recipe transfers across four backbones from two model families: Qwen2.5-VL-3B/7B, Qwen3-VL-8B, and Qwen3.5-9B. Evidence-RL yields positive mean improvement on every backbone and non-negative gains on <strong>all 36 benchmark&ndash;backbone cells</strong>. The Qwen3.5-9B configuration achieves +11.34 average gain, with 3-seed validation confirming stability (mean +11.83, all stds &le; 0.50).
                         </p>
 
-                        <!-- Table 4: Cross-backbone validation -->
+                        <!-- Table 2: Cross-backbone validation -->
+                        <p class="table-caption" id="table-cap-2">Table 2. Cross-backbone validation. Each block reports the frozen base, Ours, and absolute $\Delta$.</p>
                         <div class="result-table-wrapper">
-                            <table class="result-table">
-                                <caption>Table 4. Cross-backbone validation. Each block reports the frozen base, Ours, and absolute $\Delta$.</caption>
+                            <table class="result-table" aria-labelledby="table-cap-2">
                                 <thead>
                                     <tr>
                                         <th></th>
@@ -415,7 +485,7 @@
                                         <th class="col-sep-left">Avg. $\Delta$</th>
                                     </tr>
                                     <tr>
-                                        <th style="text-align:left">Model</th>
+                                        <th class="th-model">Model</th>
                                         <th>Count<br>Bench</th>
                                         <th>Spatial<br>Eval</th>
                                         <th>Hallu<br>sion</th>
@@ -443,10 +513,10 @@
                                         <td class="col-sep-left col-avg">&mdash;</td>
                                     </tr>
                                     <tr class="row-delta midrule">
-                                        <td class="row-model" style="padding-left:16px">$\Delta$</td>
+                                        <td class="row-model">$\Delta$</td>
                                         <td class="delta-pos">+0.00</td><td class="delta-pos">+1.62</td><td class="delta-pos">+2.03</td><td class="delta-pos">+7.05</td><td class="delta-pos">+14.37</td>
                                         <td class="col-sep-left delta-pos">+8.30</td><td class="delta-pos">+2.15</td><td class="delta-pos">+0.28</td><td class="delta-pos">+5.50</td>
-                                        <td class="col-sep-left col-avg delta-pos" style="font-weight:700">+4.59</td>
+                                        <td class="col-sep-left col-avg delta-pos cell-strong">+4.59</td>
                                     </tr>
 
                                     <tr class="group-header"><td colspan="11"><em>Backbone: Qwen2.5-VL-7B</em></td></tr>
@@ -463,10 +533,10 @@
                                         <td class="col-sep-left col-avg">&mdash;</td>
                                     </tr>
                                     <tr class="row-delta midrule">
-                                        <td class="row-model" style="padding-left:16px">$\Delta$</td>
+                                        <td class="row-model">$\Delta$</td>
                                         <td class="delta-pos">+7.07</td><td class="delta-pos">+4.13</td><td class="delta-pos">+1.44</td><td class="delta-pos">+7.58</td><td class="delta-pos">+14.22</td>
                                         <td class="col-sep-left delta-pos">+6.30</td><td class="delta-pos">+2.80</td><td class="delta-pos">+6.84</td><td class="delta-pos">+3.10</td>
-                                        <td class="col-sep-left col-avg delta-pos" style="font-weight:700">+5.94</td>
+                                        <td class="col-sep-left col-avg delta-pos cell-strong">+5.94</td>
                                     </tr>
 
                                     <tr class="group-header"><td colspan="11"><em>Backbone: Qwen3-VL-8B-Instruct</em></td></tr>
@@ -483,10 +553,10 @@
                                         <td class="col-sep-left col-avg">&mdash;</td>
                                     </tr>
                                     <tr class="row-delta midrule">
-                                        <td class="row-model" style="padding-left:16px">$\Delta$</td>
+                                        <td class="row-model">$\Delta$</td>
                                         <td class="delta-pos">+1.02</td><td class="delta-pos">+2.49</td><td class="delta-pos">+1.44</td><td class="delta-pos">+1.87</td><td class="delta-pos">+2.33</td>
                                         <td class="col-sep-left delta-pos">+0.50</td><td class="delta-pos">+0.43</td><td class="delta-pos">+1.03</td><td class="delta-pos">+0.83</td>
-                                        <td class="col-sep-left col-avg delta-pos" style="font-weight:700">+1.33</td>
+                                        <td class="col-sep-left col-avg delta-pos cell-strong">+1.33</td>
                                     </tr>
 
                                     <tr class="group-header"><td colspan="11"><em>Backbone: Qwen3.5-9B</em></td></tr>
@@ -503,23 +573,23 @@
                                         <td class="col-sep-left col-avg">&mdash;</td>
                                     </tr>
                                     <tr class="row-delta">
-                                        <td class="row-model" style="padding-left:16px">$\Delta$</td>
+                                        <td class="row-model">$\Delta$</td>
                                         <td class="delta-pos">+13.10</td><td class="delta-pos">+1.62</td><td class="delta-pos">+30.90</td><td class="delta-pos">+26.66</td><td class="delta-pos">+13.17</td>
                                         <td class="col-sep-left delta-pos">+3.75</td><td class="delta-pos">+0.55</td><td class="delta-pos">+9.46</td><td class="delta-pos">+2.83</td>
-                                        <td class="col-sep-left col-avg delta-pos" style="font-weight:700">+11.34</td>
+                                        <td class="col-sep-left col-avg delta-pos cell-strong">+11.34</td>
                                     </tr>
-                                    <tr class="row-ours" style="font-size:0.82rem">
+                                    <tr class="row-ours row-seeds">
                                         <td class="row-model">Ours (3 seeds)</td>
-                                        <td>93.60<br><span style="font-size:0.72rem;color:#586069">&plusmn;0.48</span></td>
-                                        <td>56.04<br><span style="font-size:0.72rem;color:#586069">&plusmn;0.27</span></td>
-                                        <td>78.35<br><span style="font-size:0.72rem;color:#586069">&plusmn;0.21</span></td>
-                                        <td>73.37<br><span style="font-size:0.72rem;color:#586069">&plusmn;0.17</span></td>
-                                        <td>23.11<br><span style="font-size:0.72rem;color:#586069">&plusmn;0.40</span></td>
-                                        <td class="col-sep-left">84.40<br><span style="font-size:0.72rem;color:#586069">&plusmn;0.50</span></td>
-                                        <td>89.87<br><span style="font-size:0.72rem;color:#586069">&plusmn;0.04</span></td>
-                                        <td>75.39<br><span style="font-size:0.72rem;color:#586069">&plusmn;0.22</span></td>
-                                        <td>94.46<br><span style="font-size:0.72rem;color:#586069">&plusmn;0.13</span></td>
-                                        <td class="col-sep-left col-avg delta-pos" style="font-weight:700">+11.83</td>
+                                        <td>93.60<br><span class="std">&plusmn;0.48</span></td>
+                                        <td>56.04<br><span class="std">&plusmn;0.27</span></td>
+                                        <td>78.35<br><span class="std">&plusmn;0.21</span></td>
+                                        <td>73.37<br><span class="std">&plusmn;0.17</span></td>
+                                        <td>23.11<br><span class="std">&plusmn;0.40</span></td>
+                                        <td class="col-sep-left">84.40<br><span class="std">&plusmn;0.50</span></td>
+                                        <td>89.87<br><span class="std">&plusmn;0.04</span></td>
+                                        <td>75.39<br><span class="std">&plusmn;0.22</span></td>
+                                        <td>94.46<br><span class="std">&plusmn;0.13</span></td>
+                                        <td class="col-sep-left col-avg delta-pos cell-strong">+11.83</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -533,9 +603,9 @@
                         </p>
 
                         <!-- Table 3: CED Isolation -->
+                        <p class="table-caption" id="table-cap-3">Table 3. Controlled comparison on Qwen3.5-9B with matched data, router, and compute. $\Delta$ is the mean gain over the frozen base; $\Delta_{\text{CED}}$ is Answer-CED minus correctness-only.</p>
                         <div class="result-table-wrapper">
-                            <table class="result-table">
-                                <caption>Table 3. Controlled comparison on Qwen3.5-9B with matched data, router, and compute. $\Delta$ is the mean gain over the frozen base; $\Delta_{\text{CED}}$ is Answer-CED minus correctness-only.</caption>
+                            <table class="result-table" aria-labelledby="table-cap-3">
                                 <thead>
                                     <tr>
                                         <th></th>
@@ -545,7 +615,7 @@
                                         <th></th>
                                     </tr>
                                     <tr>
-                                        <th style="text-align:left">Method</th>
+                                        <th class="th-model">Method</th>
                                         <th>Count<br>Bench</th>
                                         <th>Spatial<br>Eval</th>
                                         <th>Hallu<br>sion</th>
@@ -586,13 +656,13 @@
                                         <td class="val-best">93.90</td><td class="val-best">54.35</td><td class="val-best">78.10</td><td class="val-best">73.10</td><td class="val-best">23.12</td>
                                         <td class="col-sep-left val-best">83.75</td><td class="val-best">88.58</td><td class="val-best">75.67</td><td class="val-best">93.61</td>
                                         <td class="col-sep-left col-avg val-best">73.80</td>
-                                        <td class="delta-pos" style="font-weight:700">+11.34</td>
+                                        <td class="delta-pos cell-strong">+11.34</td>
                                     </tr>
                                     <tr class="row-delta row-ours">
-                                        <td class="row-model" style="padding-left:16px">$\Delta_{\text{CED}}$</td>
+                                        <td class="row-model">$\Delta_{\text{CED}}$</td>
                                         <td class="delta-pos">+4.00</td><td class="delta-pos">+13.90</td><td class="delta-pos">+20.17</td><td class="delta-pos">+0.20</td><td class="delta-pos">+4.39</td>
                                         <td class="col-sep-left delta-pos">+10.35</td><td class="delta-pos">+9.14</td><td class="delta-pos">+39.67</td><td class="delta-pos">+11.37</td>
-                                        <td class="col-sep-left col-avg delta-pos" style="font-weight:700">+12.58</td>
+                                        <td class="col-sep-left col-avg delta-pos cell-strong">+12.58</td>
                                         <td>&mdash;</td>
                                     </tr>
                                 </tbody>
@@ -603,10 +673,17 @@
                         </div>
 
                         <div class="section-figure section-figure--wide section-figure--framed">
-                            <img src="assets/figures/figure3_casestudy.png" alt="Case study: correctness-only vs CED reward discrimination" loading="lazy">
+                            <img src="assets/figures/web/figure3_casestudy.webp" width="2000" height="592" decoding="async" alt="Case study: correctness-only vs CED reward discrimination" loading="lazy">
                         </div>
                         <p class="section-caption">
                             <strong>Why correctness-only reward is insufficient.</strong> Two rollouts from the same GRPO group both answer "4" correctly: one relies on the prior <em>sedan = 2+2</em> without inspecting the image, while the other detects the unusual wheel configuration (1 front + 2 rear + 1 spare) through visual evidence. The CED gate $g(m)$ creates a 7&times; reward gap between the prior-based rollout ($g(m)=0.18$, $R=0.11$) and the evidence-grounded rollout ($g(m)=1.00$, $R=0.78$), enabling GRPO to select the grounded trajectory.
+                        </p>
+
+                        <div class="section-figure section-figure--framed">
+                            <img src="assets/figures/web/zero_variance_task_family.webp" width="1600" height="735" decoding="async" alt="Zero-variance fallback rate by task family for Pre-RL, correctness-only, and CED" loading="lazy">
+                        </div>
+                        <p class="section-caption">
+                            <strong>Zero-variance fallback by task family.</strong> On evidence-intensive tasks (counting, attribute, spatial), correctness-only training drives the zero-variance fallback rate to 0.76&ndash;1.00, while CED keeps it at 0.03&ndash;0.05, close to the pre-RL level. On binary existence questions, all three settings collapse to about 0.90.
                         </p>
 
                         <div class="callout callout--blue">
@@ -615,15 +692,11 @@
                             </p>
                         </div>
                     </div>
-                </div>
             </section>
 
-            <hr class="section-divider">
-
-            <!-- Section 4: Analysis (blue) -->
-            <section id="sec-analysis" class="sec-blue">
-                <div class="row">
-                    <div class="col-lg-11 mx-auto">
+            <!-- Section 4: Analysis (violet) -->
+            <section id="sec-analysis" class="sec-violet">
+                <div class="content-col">
                         <h2 class="section-title">Signal Robustness & Analysis</h2>
 
                         <!-- Training dynamics -->
@@ -633,10 +706,10 @@
                             The default Answer-CED variant directly rewards image-to-answer dependence. To isolate the effect of where the counterfactual margin is applied, we compare Answer and CoT variants on the same Qwen3.5-9B base. Answer obtains a slightly higher mean gain (+11.34 vs +10.60) with stronger general transfer. CoT-CED reaches higher training reward, but this margin advantage does not yield stronger downstream transfer &mdash; the likely failure mode is that CoT-CED can raise a per-token margin by shortening the chain around visually salient object cues, a reward-hacking pathway. Answer-CED avoids this by scoring only the final-answer span.
                         </p>
 
-                        <!-- Table 5: Answer vs CoT -->
+                        <!-- Table 4: Answer vs CoT -->
+                        <p class="table-caption" id="table-cap-4">Table 4. Answer vs. CoT variants on Qwen3.5-9B; Avg. $\Delta$ is the mean gain over the base.</p>
                         <div class="result-table-wrapper">
-                            <table class="result-table">
-                                <caption>Table 5. Answer vs. CoT variants on Qwen3.5-9B; Avg. $\Delta$ is the mean gain over the base.</caption>
+                            <table class="result-table" aria-labelledby="table-cap-4">
                                 <thead>
                                     <tr>
                                         <th></th>
@@ -645,7 +718,7 @@
                                         <th class="col-sep-left">Avg. $\Delta$</th>
                                     </tr>
                                     <tr>
-                                        <th style="text-align:left">Variant</th>
+                                        <th class="th-model">Variant</th>
                                         <th>Count<br>Bench</th>
                                         <th>Spatial<br>Eval</th>
                                         <th>Hallu<br>sion</th>
@@ -663,7 +736,7 @@
                                         <td class="row-model">Answer</td>
                                         <td class="val-best">93.90</td><td class="val-best">54.35</td><td class="val-best">78.10</td><td class="val-best">73.10</td><td>23.12</td>
                                         <td class="col-sep-left val-best">83.75</td><td class="val-best">88.58</td><td class="val-best">75.67</td><td>93.61</td>
-                                        <td class="col-sep-left col-avg delta-pos" style="font-weight:700">+11.34</td>
+                                        <td class="col-sep-left col-avg delta-pos cell-strong">+11.34</td>
                                     </tr>
                                     <tr>
                                         <td class="row-model">CoT</td>
@@ -677,10 +750,10 @@
 
                         <div class="section-figure-row section-figure--wide section-figure--framed">
                             <div class="section-figure-col">
-                                <img src="assets/figures/cot_ced_reward.png" alt="Training reward: Answer-CED vs CoT-CED" loading="lazy">
+                                <img src="assets/figures/web/cot_ced_reward.webp" width="1200" height="595" decoding="async" alt="Training reward: Answer-CED vs CoT-CED" loading="lazy">
                             </div>
                             <div class="section-figure-col">
-                                <img src="assets/figures/cot_ced_correctness.png" alt="Training correctness: Answer-CED vs CoT-CED" loading="lazy">
+                                <img src="assets/figures/web/cot_ced_correctness.webp" width="1200" height="595" decoding="async" alt="Training correctness: Answer-CED vs CoT-CED" loading="lazy">
                             </div>
                         </div>
                         <p class="section-caption">
@@ -695,88 +768,104 @@
                         </p>
 
                         <div class="section-figure section-figure--wide section-figure--framed">
-                            <img src="assets/figures/proposal_robustness_main.png" alt="CED probe robustness under proposal perturbation" loading="lazy">
+                            <img src="assets/figures/web/proposal_robustness_main.webp" width="2000" height="586" decoding="async" alt="CED probe robustness under proposal perturbation" loading="lazy">
                         </div>
                         <p class="section-caption">
                             <strong>CED signal tracks proposal relevance, not masking magnitude.</strong> (a) Random-box proposals collapse the margin to near zero across all task types. (b) IoU-graded degradation on the count-exclusion diagnostic shows monotonic decrease as spatial overlap drops.
                         </p>
 
-                        <div class="callout callout--blue">
+                        <div class="callout callout--violet">
                             <p>
                                 <strong>Intervention Ablation:</strong> Mean replacement gives the strongest discrimination (AUC 0.669), followed by zero replacement (0.641) and Gaussian noise (0.629). Global random masking performs below chance (above-baseline rate 0.490), confirming CED depends on structured local counterfactuals rather than corruption magnitude.
                             </p>
                         </div>
                     </div>
-                </div>
             </section>
 
-            <hr class="section-divider">
-
-            <!-- Section 5: Discussion (gold) -->
-            <section id="sec-discussion" class="sec-gold">
-                <div class="row">
-                    <div class="col-lg-11 mx-auto">
+            <!-- Section 5: Discussion (rose) -->
+            <section id="sec-discussion" class="sec-rose">
+                <div class="content-col">
                         <h2 class="section-title">Visual Evidence over Language Priors</h2>
 
                         <p class="body-text">
-                            The FREAK benchmark contains images whose visual evidence contradicts a common language prior. PAPO and LLaVA-v1.6-7B follow the prior-consistent answer, whereas the CED-trained model recovers the image-grounded answer. The qualitative rollouts instantiate the rerouting predicted by the causal graph: answers that would otherwise be driven by shortcut priors are redirected toward visual evidence.
+                            The FREAK benchmark contains images whose visual evidence contradicts a common language prior. PAPO, LLaVA-v1.6-7B, and the Qwen2.5-VL-7B base model follow the prior-consistent answer, whereas the CED-trained model recovers the image-grounded answer. The qualitative rollouts instantiate the rerouting predicted by the causal graph: answers that would otherwise be driven by shortcut priors are redirected toward visual evidence.
                         </p>
 
                         <!-- Case study grid -->
                         <div class="case-grid">
-                            <div class="case-card">
-                                <img src="assets/figures/case_study/FREAK_548.png" alt="FREAK-548">
-                                <div class="case-card__label">FREAK-548</div>
-                                <div class="case-card__text">
-                                    <em>Q:</em> Point or tail?<br>
-                                    <em>GT:</em> tail<br>
-                                    <em>Others:</em> point / point / head<br>
-                                    <strong>Ours: tail</strong>
-                                </div>
-                            </div>
-                            <div class="case-card">
-                                <img src="assets/figures/case_study/FREAK_1683.png" alt="FREAK-1683">
-                                <div class="case-card__label">FREAK-1683</div>
-                                <div class="case-card__text">
-                                    <em>Q:</em> Rolling-pin handles?<br>
-                                    <em>GT:</em> 1<br>
-                                    <em>Others:</em> 2 / 2 / 2<br>
-                                    <strong>Ours: 1</strong>
-                                </div>
-                            </div>
-                            <div class="case-card">
-                                <img src="assets/figures/case_study/FREAK_1694.png" alt="FREAK-1694">
-                                <div class="case-card__label">FREAK-1694</div>
-                                <div class="case-card__text">
-                                    <em>Q:</em> Toothbrush rows?<br>
-                                    <em>GT:</em> 1<br>
-                                    <em>Others:</em> 3 / 2 / 3<br>
-                                    <strong>Ours: 1</strong>
-                                </div>
-                            </div>
-                            <div class="case-card">
-                                <img src="assets/figures/case_study/FREAK_1713.png" alt="FREAK-1713">
-                                <div class="case-card__label">FREAK-1713</div>
-                                <div class="case-card__text">
-                                    <em>Q:</em> Eyeglass arms?<br>
-                                    <em>GT:</em> 1<br>
-                                    <em>Others:</em> 2 / 2 / 2<br>
-                                    <strong>Ours: 1</strong>
-                                </div>
-                            </div>
-                            <div class="case-card">
-                                <img src="assets/figures/case_study/FREAK_1751.png" alt="FREAK-1751">
-                                <div class="case-card__label">FREAK-1751</div>
-                                <div class="case-card__text">
-                                    <em>Q:</em> Rickshaw tires?<br>
-                                    <em>GT:</em> 3<br>
-                                    <em>Others:</em> 2 / 2 / 2<br>
-                                    <strong>Ours: 3</strong>
-                                </div>
-                            </div>
+                            <figure class="case-card">
+                                <img src="assets/figures/web/case_study/FREAK_548.webp" width="900" height="900" alt="FREAK-548: Point or tail?" loading="lazy" decoding="async">
+                                <figcaption>
+                                    <div class="case-card__label">FREAK-548</div>
+                                    <div class="case-card__q">Point or tail?</div>
+                                    <div class="case-card__gt">GT: <b>tail</b></div>
+                                </figcaption>
+                                <ul class="case-card__answers">
+                                    <li class="case-ans case-ans--bad"><span>PAPO</span><b>point</b><i class="fas fa-xmark" aria-label="wrong"></i></li>
+                                    <li class="case-ans case-ans--bad"><span>LLaVA-1.6</span><b>point</b><i class="fas fa-xmark" aria-label="wrong"></i></li>
+                                    <li class="case-ans case-ans--bad"><span>Qwen2.5-VL</span><b>head</b><i class="fas fa-xmark" aria-label="wrong"></i></li>
+                                    <li class="case-ans case-ans--ours"><span>Ours</span><b>tail</b><i class="fas fa-check" aria-label="correct"></i></li>
+                                </ul>
+                            </figure>
+                            <figure class="case-card">
+                                <img src="assets/figures/web/case_study/FREAK_1683.webp" width="900" height="900" alt="FREAK-1683: Rolling-pin handles?" loading="lazy" decoding="async">
+                                <figcaption>
+                                    <div class="case-card__label">FREAK-1683</div>
+                                    <div class="case-card__q">Rolling-pin handles?</div>
+                                    <div class="case-card__gt">GT: <b>1</b></div>
+                                </figcaption>
+                                <ul class="case-card__answers">
+                                    <li class="case-ans case-ans--bad"><span>PAPO</span><b>2</b><i class="fas fa-xmark" aria-label="wrong"></i></li>
+                                    <li class="case-ans case-ans--bad"><span>LLaVA-1.6</span><b>2</b><i class="fas fa-xmark" aria-label="wrong"></i></li>
+                                    <li class="case-ans case-ans--bad"><span>Qwen2.5-VL</span><b>2</b><i class="fas fa-xmark" aria-label="wrong"></i></li>
+                                    <li class="case-ans case-ans--ours"><span>Ours</span><b>1</b><i class="fas fa-check" aria-label="correct"></i></li>
+                                </ul>
+                            </figure>
+                            <figure class="case-card">
+                                <img src="assets/figures/web/case_study/FREAK_1694.webp" width="900" height="900" alt="FREAK-1694: Toothbrush rows?" loading="lazy" decoding="async">
+                                <figcaption>
+                                    <div class="case-card__label">FREAK-1694</div>
+                                    <div class="case-card__q">Toothbrush rows?</div>
+                                    <div class="case-card__gt">GT: <b>1</b></div>
+                                </figcaption>
+                                <ul class="case-card__answers">
+                                    <li class="case-ans case-ans--bad"><span>PAPO</span><b>3</b><i class="fas fa-xmark" aria-label="wrong"></i></li>
+                                    <li class="case-ans case-ans--bad"><span>LLaVA-1.6</span><b>2</b><i class="fas fa-xmark" aria-label="wrong"></i></li>
+                                    <li class="case-ans case-ans--bad"><span>Qwen2.5-VL</span><b>3</b><i class="fas fa-xmark" aria-label="wrong"></i></li>
+                                    <li class="case-ans case-ans--ours"><span>Ours</span><b>1</b><i class="fas fa-check" aria-label="correct"></i></li>
+                                </ul>
+                            </figure>
+                            <figure class="case-card">
+                                <img src="assets/figures/web/case_study/FREAK_1713.webp" width="900" height="900" alt="FREAK-1713: Eyeglass arms?" loading="lazy" decoding="async">
+                                <figcaption>
+                                    <div class="case-card__label">FREAK-1713</div>
+                                    <div class="case-card__q">Eyeglass arms?</div>
+                                    <div class="case-card__gt">GT: <b>1</b></div>
+                                </figcaption>
+                                <ul class="case-card__answers">
+                                    <li class="case-ans case-ans--bad"><span>PAPO</span><b>2</b><i class="fas fa-xmark" aria-label="wrong"></i></li>
+                                    <li class="case-ans case-ans--bad"><span>LLaVA-1.6</span><b>2</b><i class="fas fa-xmark" aria-label="wrong"></i></li>
+                                    <li class="case-ans case-ans--bad"><span>Qwen2.5-VL</span><b>2</b><i class="fas fa-xmark" aria-label="wrong"></i></li>
+                                    <li class="case-ans case-ans--ours"><span>Ours</span><b>1</b><i class="fas fa-check" aria-label="correct"></i></li>
+                                </ul>
+                            </figure>
+                            <figure class="case-card">
+                                <img src="assets/figures/web/case_study/FREAK_1751.webp" width="900" height="900" alt="FREAK-1751: Rickshaw tires?" loading="lazy" decoding="async">
+                                <figcaption>
+                                    <div class="case-card__label">FREAK-1751</div>
+                                    <div class="case-card__q">Rickshaw tires?</div>
+                                    <div class="case-card__gt">GT: <b>3</b></div>
+                                </figcaption>
+                                <ul class="case-card__answers">
+                                    <li class="case-ans case-ans--bad"><span>PAPO</span><b>2</b><i class="fas fa-xmark" aria-label="wrong"></i></li>
+                                    <li class="case-ans case-ans--bad"><span>LLaVA-1.6</span><b>2</b><i class="fas fa-xmark" aria-label="wrong"></i></li>
+                                    <li class="case-ans case-ans--bad"><span>Qwen2.5-VL</span><b>2</b><i class="fas fa-xmark" aria-label="wrong"></i></li>
+                                    <li class="case-ans case-ans--ours"><span>Ours</span><b>3</b><i class="fas fa-check" aria-label="correct"></i></li>
+                                </ul>
+                            </figure>
                         </div>
                         <p class="section-caption">
-                            <strong>Five prior-conflict FREAK cases.</strong> Each card reports the ground truth, the outputs of PAPO, LLaVA-v1.6-7B, and the Qwen2.5-VL-7B base model (in that order), and our output. The non-CED models follow a plausible object prior, whereas ours follows the local visual evidence.
+                            <strong>Five prior-conflict FREAK cases.</strong> Each card reports the ground truth and the answers of PAPO, LLaVA-v1.6-7B, the Qwen2.5-VL-7B base model, and ours (click an image to enlarge). The non-CED models follow a plausible object prior, whereas ours follows the local visual evidence.
                         </p>
 
                         <!-- Evidence-closed self-evolution -->
@@ -790,13 +879,12 @@
                             No text-only degradation: evaluating the Qwen3.5-9B checkpoint on eight text-only benchmarks shows a mean accuracy change of only &minus;0.27pp, with no single benchmark dropping more than 1.5pp. CED improves visual grounding without degrading the language backbone.
                         </p>
 
-                        <div class="callout callout--gold">
+                        <div class="callout callout--rose">
                             <p>
                                 <strong>Conclusion:</strong> Post-training should reward correct answers for depending on the visual evidence relevant to the question, rather than for matching the answer distribution alone. Achieving high accuracy without depending on the relevant evidence is not visual reasoning &mdash; making that dependence a prioritized training objective is what evidence-intensive reasoning requires.
                             </p>
                         </div>
                     </div>
-                </div>
             </section>
 
             <!-- Invitation to the full paper -->
@@ -805,12 +893,11 @@
             </p>
 
             <!-- Citation Section -->
-            <section id="citation" class="mt-2">
-                <div class="row">
-                    <div class="col-lg-11 mx-auto">
+            <section id="citation">
+                <div class="content-col">
                         <h2 class="section-title">Citation</h2>
                         <div class="citation-block">
-                            <button class="copy-citation-btn" onclick="copyCitation(this)" title="Copy to clipboard">
+                            <button type="button" class="copy-citation-btn" onclick="copyCitation(this)" title="Copy to clipboard">
                                 <i class="fas fa-copy"></i><span>Copy</span>
                             </button>
                             <pre><code>@misc{huang2026evidencerlevidenceintensivevisualreasoning,
@@ -824,123 +911,164 @@
 }</code></pre>
                         </div>
                     </div>
-                </div>
             </section>
 
-        </div><!-- end sidebar-content-area -->
+        </div><!-- end content-area -->
     </main>
 
     <!-- Image Lightbox -->
-    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-        <img id="lightbox-img" src="" alt="">
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged figure" hidden>
+        <button type="button" class="lightbox__close" id="lightbox-close" aria-label="Close"><i class="fas fa-xmark"></i></button>
+        <figure class="lightbox__figure">
+            <img id="lightbox-img" src="" alt="">
+            <figcaption id="lightbox-caption" class="lightbox__caption"></figcaption>
+        </figure>
     </div>
 
     <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
+            <p class="site-footer__title">Evidence-RL: Towards Evidence-intensive Visual Reasoning</p>
+            <p class="site-footer__links">
+                <a href="https://arxiv.org/abs/2608.08021">arXiv</a>
+                <span aria-hidden="true">&middot;</span>
+                <a href="https://huggingface.co/papers/2608.08021">Hugging Face</a>
+                <span aria-hidden="true">&middot;</span>
+                <a href="#citation">Cite</a>
+                <span aria-hidden="true">&middot;</span>
+                <a href="#overview">Back to top</a>
+            </p>
+            <p class="site-footer__meta">&copy; 2026 The Evidence-RL authors &middot; Last updated September 2026</p>
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
     <script>
     (function() {
         const sectionNav = document.getElementById('section-nav');
         const navLinks = document.querySelectorAll('.section-nav-link');
+        const hamburger = document.getElementById('nav-hamburger');
+        const progress = document.getElementById('nav-progress');
+        const mobileCurrent = document.getElementById('nav-mobile-current');
+        const tldr = document.getElementById('tldr');
         const sections = [];
 
         navLinks.forEach(link => {
-            const id = link.getAttribute('data-section');
-            const el = document.getElementById(id);
-            if (el) sections.push({ id, el, link });
+            const el = document.getElementById(link.dataset.section);
+            if (el) sections.push({ el, link });
         });
 
-        function updateNavVisibility() {
-            const tldr = document.getElementById('tldr');
-            if (!tldr || !sectionNav) return;
+        function closeMenu() {
+            sectionNav.classList.remove('menu-open');
+            hamburger.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', 'false');
+        }
+
+        function onScroll() {
+            const y = window.scrollY;
             const tldrBottom = tldr.offsetTop + tldr.offsetHeight;
-            sectionNav.classList.toggle('visible', window.scrollY > tldrBottom - 100);
-        }
+            sectionNav.classList.toggle('visible', y > tldrBottom - 100);
 
-        function updateActiveSection() {
-            const scrollY = window.scrollY + 200;
             let current = sections[0];
-            for (const section of sections) {
-                if (section.el.offsetTop <= scrollY) current = section;
+            for (const s of sections) {
+                if (s.el.getBoundingClientRect().top <= 200) current = s;
             }
-            navLinks.forEach(link => link.classList.remove('active'));
-            if (current) current.link.classList.add('active');
+            navLinks.forEach(l => l.classList.remove('active'));
+            if (current) {
+                current.link.classList.add('active');
+                mobileCurrent.textContent = current.link.dataset.section === 'overview' ? '' : current.link.textContent.trim();
+            }
+
+            const max = document.documentElement.scrollHeight - window.innerHeight;
+            progress.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, y / max) : 0) + ')';
         }
 
-        window.addEventListener('scroll', () => {
-            updateNavVisibility();
-            updateActiveSection();
-        });
-        updateNavVisibility();
-        updateActiveSection();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onScroll);
+        onScroll();
 
-        navLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const id = this.getAttribute('data-section');
-                const target = document.getElementById(id);
-                if (target) target.scrollIntoView({ behavior: 'smooth' });
-                sectionNav.classList.remove('menu-open');
-                const hamburger = document.getElementById('nav-hamburger');
-                if (hamburger) hamburger.classList.remove('open');
-            });
-        });
+        navLinks.forEach(link => link.addEventListener('click', closeMenu));
 
-        const hamburger = document.getElementById('nav-hamburger');
-        if (hamburger) {
-            hamburger.addEventListener('click', function() {
-                this.classList.toggle('open');
-                sectionNav.classList.toggle('menu-open');
-            });
-        }
+        hamburger.addEventListener('click', function() {
+            const open = !sectionNav.classList.contains('menu-open');
+            sectionNav.classList.toggle('menu-open', open);
+            this.classList.toggle('open', open);
+            this.setAttribute('aria-expanded', String(open));
+        });
 
         // Touch-friendly tooltips
-        if ('ontouchstart' in window) {
-            document.querySelectorAll('.tldr-keyword').forEach(kw => {
-                kw.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const wasActive = this.classList.contains('tooltip-active');
-                    document.querySelectorAll('.tldr-keyword').forEach(k => k.classList.remove('tooltip-active'));
-                    if (!wasActive) this.classList.add('tooltip-active');
-                });
+        const keywords = document.querySelectorAll('.tldr-keyword');
+        keywords.forEach(kw => {
+            kw.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const wasActive = this.classList.contains('tooltip-active');
+                keywords.forEach(k => k.classList.remove('tooltip-active'));
+                if (!wasActive) this.classList.add('tooltip-active');
             });
-            document.addEventListener('click', function(e) {
-                if (!e.target.closest('.tldr-keyword')) {
-                    document.querySelectorAll('.tldr-keyword').forEach(k => k.classList.remove('tooltip-active'));
-                }
+        });
+        document.addEventListener('click', () => keywords.forEach(k => k.classList.remove('tooltip-active')));
+
+        // Delta-row toggle for the main results table
+        const deltaToggle = document.getElementById('delta-toggle');
+        const mainTable = document.getElementById('table-main');
+        if (deltaToggle && mainTable) {
+            deltaToggle.addEventListener('click', function() {
+                const showAll = mainTable.classList.toggle('hide-deltas') === false;
+                this.setAttribute('aria-pressed', String(showAll));
+                this.querySelector('i').className = showAll ? 'fas fa-eye-slash' : 'fas fa-eye';
+                this.querySelector('span').innerHTML = showAll ? 'Hide &Delta; rows for baselines' : 'Show &Delta; rows for all methods';
             });
         }
+
+        // Lightbox for figures
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+        const lightboxClose = document.getElementById('lightbox-close');
+        let lastFocus = null;
+
+        function captionFor(img) {
+            const card = img.closest('.case-card');
+            if (card) return card.querySelector('.case-card__label').textContent + ' \u2014 ' + card.querySelector('.case-card__q').textContent;
+            const fig = img.closest('.section-figure, .section-figure-row');
+            const next = fig && fig.nextElementSibling;
+            if (next && next.classList.contains('section-caption')) {
+                const strong = next.querySelector('strong');
+                return strong ? strong.textContent : '';
+            }
+            return img.alt;
+        }
+
+        function openLightbox(img) {
+            lastFocus = document.activeElement;
+            lightboxImg.src = img.currentSrc || img.src;
+            lightboxImg.alt = img.alt;
+            lightboxCaption.textContent = captionFor(img);
+            lightbox.hidden = false;
+            document.body.classList.add('no-scroll');
+            lightboxClose.focus();
+        }
+
+        function closeLightbox() {
+            if (lightbox.hidden) return;
+            lightbox.hidden = true;
+            document.body.classList.remove('no-scroll');
+            if (lastFocus) lastFocus.focus();
+        }
+
+        document.querySelectorAll('.section-figure img, .section-figure-col img, .case-card img').forEach(img => {
+            img.tabIndex = 0;
+            img.setAttribute('role', 'button');
+            img.addEventListener('click', () => openLightbox(img));
+            img.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(img); }
+            });
+        });
+        lightbox.addEventListener('click', e => { if (e.target !== lightboxImg) closeLightbox(); });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeLightbox(); closeMenu(); } });
     })();
 
-    
-
-    // Lightbox for figures
-    document.querySelectorAll('.section-figure img, .section-figure-col img, .section-figure--tall img').forEach(img => {
-        img.addEventListener('click', function() {
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightbox-img');
-            lightboxImg.src = this.src;
-            lightboxImg.alt = this.alt;
-            lightbox.classList.add('open');
-        });
-    });
-
-    function closeLightbox() {
-        document.getElementById('lightbox').classList.remove('open');
-    }
-
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') closeLightbox();
-    });
-
     function copyCitation(btn) {
-        const pre = btn.closest('.citation-block').querySelector('code');
-        const text = pre.textContent;
+        const text = btn.closest('.citation-block').querySelector('code').textContent;
         navigator.clipboard.writeText(text).then(() => {
             const icon = btn.querySelector('i');
             const label = btn.querySelector('span');

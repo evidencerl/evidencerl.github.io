@@ -303,9 +303,10 @@ a { color: var(--link-color); }
 }
 
 .tldr-abstract {
+    max-width: 720px;
     font-size: 1.0625rem;
     line-height: 1.7;
-    margin: 0;
+    margin: 0 auto;
 }
 
 /* Key-results strip */

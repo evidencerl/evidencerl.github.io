@@ -1,4 +1,4 @@
-# Evidence-RL: Towards Evidence-intensive Visual Reasoning
+# [Neurips2026]Evidence-RL: Towards Evidence-intensive Visual Reasoning
 
 This repository contains the source code for the project page of the paper **Evidence-RL: Towards Evidence-intensive Visual Reasoning**.
 

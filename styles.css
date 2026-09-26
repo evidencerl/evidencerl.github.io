@@ -256,29 +256,7 @@ a { color: var(--link-color); }
 
 .paper-btn--outline:hover { background-color: var(--primary-color); color: #FFFFFF; }
 
-.paper-btn--disabled,
-.paper-btn--disabled:hover {
-    background-color: rgba(0, 0, 0, 0.03);
-    border-color: rgba(0, 0, 0, 0.12);
-    border-style: dashed;
-    color: #7A828B;
-    box-shadow: none;
-    transform: none;
-    cursor: not-allowed;
-}
-
 .btn-emoji { font-size: 1.05em; line-height: 1; }
-
-.soon-badge {
-    font-size: 0.66rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    padding: 2px 7px;
-    border-radius: 999px;
-    background: rgba(200, 138, 62, 0.14);
-    color: #8A5A1E;
-}
 
 /* =============================================
    4. TL;DR SECTION
@@ -1175,13 +1153,16 @@ a { color: var(--link-color); }
    ============================================= */
 @media (max-width: 576px) {
     .header-section { padding: 44px 0 32px 0; }
-    .paper-btn-row:first-child {
+    .paper-btn-wrapper {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        gap: 10px;
         width: 100%;
         max-width: 340px;
+        margin: 32px auto 0 auto;
     }
-    .paper-btn-row:first-child .paper-btn { justify-content: center; }
+    .paper-btn-row { display: contents; }
+    .paper-btn-wrapper .paper-btn { justify-content: center; }
     .paper-title { font-size: 2.3rem; }
     .paper-subtitle { font-size: 1.1rem; }
     .author-line { font-size: 0.86rem; }

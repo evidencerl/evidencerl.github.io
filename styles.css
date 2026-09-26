@@ -205,9 +205,16 @@ a { color: var(--link-color); }
 /* Paper buttons */
 .paper-btn-wrapper {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 36px;
+}
+
+.paper-btn-row {
+    display: flex;
     justify-content: center;
     gap: 10px;
-    margin-top: 36px;
     flex-wrap: wrap;
 }
 
@@ -1164,6 +1171,13 @@ a { color: var(--link-color); }
    ============================================= */
 @media (max-width: 576px) {
     .header-section { padding: 44px 0 32px 0; }
+    .paper-btn-row:first-child {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        max-width: 340px;
+    }
+    .paper-btn-row:first-child .paper-btn { justify-content: center; }
     .paper-title { font-size: 2.4rem; }
     .paper-subtitle { font-size: 1.15rem; }
     .author-line { font-size: 0.86rem; }

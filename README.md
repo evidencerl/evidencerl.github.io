@@ -16,13 +16,10 @@ Vision-Language Models often produce correct-looking answers by relying on langu
 If you find this work helpful, please consider citing our paper:
 
 ```bibtex
-@misc{huang2026evidencerlevidenceintensivevisualreasoning,
-      title={Evidence-RL: Towards Evidence-intensive Visual Reasoning},
-      author={Haojie Huang and Xinlei Yu and Chengming Xu and Zhangquan Chen and Cheng Yang and Qingdong He and Yu Yang and Jiangning Zhang and Xiaobin Hu},
-      year={2026},
-      eprint={2608.08021},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2608.08021},
+@article{huang2026evidence,
+  title={Evidence-RL: Towards Evidence-intensive Visual Reasoning},
+  author={Huang, Haojie and Yu, Xinlei and Xu, Chengming and Chen, Zhangquan and Yang, Cheng and He, Qingdong and Yang, Yu and Zhang, Jiangning and Hu, Xiaobin},
+  journal={arXiv preprint arXiv:2608.08021},
+  year={2026}
 }
 ```
